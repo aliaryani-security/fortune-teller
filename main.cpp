@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <ctime>
 #include <iostream>
 using namespace std;
@@ -20,6 +21,38 @@ int main() {
 
     cout << "What's your name dear? => " << endl;
     cin.getline(name, max_length);
+
+    while (!end) {
+        cout << "oh dear " << name << ", I see that ";
+        size_t rand_num = static_cast<size_t>((rand() % 11));
+        switch (rand_num)  {
+            case 0:
+                cout << prediction0 << endl;
+                break;
+            case 1:
+                cout << prediction1 << endl;
+                break;
+            case 2:
+                cout << prediction2 << endl;
+                break;
+            case 3:
+                cout << prediction3 << endl;
+                break;
+            case 4:
+                cout << prediction4 << endl;
+                break;
+            default:
+                cout << ", hmm, I don't see anything..." << endl;
+                break;
+        }
+        cout << "Do you want me to try again? ( y | n ) : ";
+
+        char go_on;
+        cin >> go_on;
+        end = ((go_on == 'Y') || (go_on == 'y')) ? false : true;
+    }
+
+    cout << "That's all I have for you today. have a good time" << endl;
 
     return 0;
 }
