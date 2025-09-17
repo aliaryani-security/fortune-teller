@@ -13,5 +13,13 @@ int main() {
     char prediction3 [] {"you're running away from something really scary."};
     char prediction4 [] {"you're laughing you lungs out, I've never seen this before!"};
 
+    bool end {false};
+    
+    const int max_length {15};
+    char name[max_length]{};
+
+    cout << "What's your name dear? => " << endl;
+    cin.getline(name, max_length);
+
     return 0;
 }
